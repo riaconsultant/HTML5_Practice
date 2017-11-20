@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <title>Geolocation Example</title>
+    <script>
+    //  Closure Example
+    // function goodMorning(name) {
+    //     var text = 'Good Morning' + name; // local variable
+    //     var goodMorningAlert = function() { alert(text); }
+    //     return goodMorningAlert;
+    //     }
+
+    //     var goodMorningAlert2 = goodMorning('Manoj');
+    //     goodMorningAlert2();
+    // Geolocation Example
+
+
+    //  Web SQL
+    var db = openDatabase('myDB','1.0','sample DB',2*1024*1024);
+
+    
+        
+        db.transaction(function(tx){
+            tx.executeSql('CREATE TABLE IF NOT EXISTS ab(id,name,age)');
+            tx.executeSql('INSERT INTO ab(id,name) VALUES ("1","Manoj")');
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
