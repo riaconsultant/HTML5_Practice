@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe window</title>
+</head>
+<body>
+    <h1>Hello I am IFrame: Send data to parent window</h1>
+    <button onclick="btnPress()">Child to Parent</button>
+    <script>
+        function btnPress() {
+            window.parent.postMessage('Btn Pressed....', '*');
+            console.log('Child Clicked');
+        }
+
+        window.parent.addEventListener('message', messageListner, true);
+
+        function messageListner(evt) {
+            console.log('Parent Lisentner -', evt.data);
+        }
+    </script>
+</body>
+</html>
